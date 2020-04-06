@@ -1,0 +1,28 @@
+<html>
+<head>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Error</title>
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="/static/baza.css">
+</head>
+<body {% if title == 'Grecha' %} id="home_background"
+{% elif title == 'Sigarette' %} id="cigarette_background"
+{% elif title == 'Water' %} id="water_background"
+{% elif title == 'Cost' %} id="vse_background"
+{% endif %}>
+    <h2 class="header">
+    <a class='upWords' href="/grecha">Гречка</a>
+    <a class='upWords' href="/cigarette">Цибарки</a>
+    <a class='upWords' href="/water">Вода</a>
+    <a class='upWords' href="/za vse"> за все</a>
+    </h2>
+    <hr>
+    <h2 class="footer">
+    <a href="https://t.me/fisting_my_ass"><img src="static/images/Telgrm.png" width="50"
+  height="50" alt="Пример"></a>
+    </h2>
+</body>
+{% block content %}{% endblock %}
+</html>

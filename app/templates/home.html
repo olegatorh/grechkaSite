@@ -1,0 +1,37 @@
+{% extends 'baza.html' %}
+{% block content %}
+
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+    <div class="main" style="color: white">
+        <p> <h3 class="shadow_for_text">скільки раз в день ти готовий їсти гречку?</h3>
+            {{ form.var1.label }} <br>
+            {{ form.var1(size=32) }}
+            {% for error in form.var1.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p> <h3>скільки грам подужаєш за раз? (100 грам средуха)</h3>
+            {{ form.var2.label }} <br>
+            {{ form.var2(size=32) }}
+            {% for error in form.var2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            <h3>скільки днів на тиждень ?</h3>
+            {{ form.var3.label }} <br>
+            {{ form.var3(size=32) }}
+            {% for error in form.var3.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.submit() }}
+            {% if form.validate_on_submit() %}
+        </p>
+                <h2>{{ get_flashed_messages() }}</h2>
+            {% endif %}
+        <p><h2> ціна на гречку <a href="https://rozetka.com.ua/ua/199607923/p199607923/">розетка</a> - {{ cena }} грн</h2>></p>
+    </div>
+{% endblock %}

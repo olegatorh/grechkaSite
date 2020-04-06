@@ -1,0 +1,27 @@
+{% extends 'baza.html' %}
+
+{% block content %}
+    <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+        <div class="main" style="color: white">
+            <p><h2>Скільки літрів випиваєш за день?</h2>
+                {{ form.var1.label }}
+                {{ form.var1(size=32) }}
+                {% for error in form.var1.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            </p>
+            <p>
+                {{ form.submit() }}
+                {% if form.validate_on_submit() %}
+            </p>
+                    <h2>{{ get_flashed_messages() }}</h2>
+                {% endif %}
+            <p>
+                <h2>
+            <a href="https://rozetka.com.ua/ua/karpatska_djerelna_4820051240530/p38885232/">water карпатська джерельна 2л - </a>{{ cena }}
+                </h2>
+            </p>
+
+        </div>
+{% endblock %}

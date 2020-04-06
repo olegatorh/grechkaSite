@@ -1,0 +1,22 @@
+{% extends 'baza.html' %}
+{% block content %}
+    <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="main" style="color: white">
+         <p> <h3>скільки цигарок викурюєш в день?</h3>
+            {{ form.var1.label }} <br>
+            {{ form.var1(size=32) }}
+            {% for error in form.var1.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+            {{ form.submit() }}
+            {% if form.validate_on_submit() %}
+        </p>
+                <h2>{{ get_flashed_messages() }}</h2>
+            {% endif %}
+        <p><h2><a href="https://fozzyshop.com.ua/sigarety/56828-sigareti-winston-xs-plus-duo-4820000535786.html">Сигарети Winston XS Plus Duo - </a>{{ cena }} грн</h2></p>
+        <p>
+    </div>
+{% endblock %}
