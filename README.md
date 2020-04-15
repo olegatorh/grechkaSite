@@ -14,6 +14,5 @@ $ suorce venv/bin/activate
 
 (venv) $ pip install -r requirements.txt
 
-4.Setup your database and run the Server
 
 (venv) $ flask run 
